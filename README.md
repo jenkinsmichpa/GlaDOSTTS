@@ -24,7 +24,7 @@ For setting an external host and specified port:
 
 ```yaml
 tts:
-  - platform: gladostts_remote
+  - platform: gladostts
     host: <host>
     port: <port>
 
