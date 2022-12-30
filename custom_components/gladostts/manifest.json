@@ -1,0 +1,9 @@
+{
+  "domain": "gladostts",
+  "name": "GlaDOSTTS",
+  "version": "1.0.1",
+  "documentation": "https://github.com/jenkinsmichpa/GLaDOSTTS/blob/master/README.md",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["@jenkinsmichpa"]
+}

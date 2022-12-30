@@ -1,4 +1,4 @@
-"""Support for the Pico TTS speech service."""
+"""Support for the GLaDOSTTS speech service."""
 import logging
 
 import asyncio
@@ -16,11 +16,11 @@ from urllib.parse import quote
 
 _LOGGER = logging.getLogger(__name__)
 
-SUPPORT_LANGUAGES = ["en-US", "en-GB", "de-DE", "es-ES", "fr-FR", "it-IT"]
+SUPPORT_LANGUAGES = ["en-US"]
 
 DEFAULT_LANG = "en-US"
 DEFAULT_HOST = "localhost"
-DEFAULT_PORT = 59126
+DEFAULT_PORT = 8124
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
@@ -32,20 +32,20 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 
 
 def get_engine(hass, config, discovery_info=None):
-    """Set up Pico speech component."""
-    return PicoProvider(hass, config[CONF_LANG], config[CONF_HOST], config[CONF_PORT])
+    """Set up GLaDOSTTS speech component."""
+    return GLaDOSTTSProvider(hass, config[CONF_LANG], config[CONF_HOST], config[CONF_PORT])
 
 
-class PicoProvider(Provider):
-    """The Pico TTS API provider."""
+class GLaDOSTTSProvider(Provider):
+    """The GLaDOSTTS API provider."""
 
     def __init__(self, hass, lang, host, port):
-        """Initialize Pico TTS provider."""
+        """Initialize GLaDOSTTS provider."""
         self._hass = hass
         self._lang = lang
         self._host = host
         self._port = port
-        self.name = "PicoTTS (Remote)"
+        self.name = "GLaDOSTTS"
 
     @property
     def default_language(self):
@@ -58,19 +58,15 @@ class PicoProvider(Provider):
         return SUPPORT_LANGUAGES
 
     async def async_get_tts_audio(self, message, language, options=None):
-        """Load TTS using a remote pico2wave server."""
+        """Load TTS using a GLaDOSTTS server."""
         websession = async_get_clientsession(self._hass)
 
         try:
-            with async_timeout.timeout(5):
-                url = "http://{}:{}/speak?".format(self._host, self._port)
+            with async_timeout.timeout(10):
                 encoded_message = quote(message)
-                url_param = {
-                    "lang": language,
-                    "text": encoded_message,
-                }
+                url = "http://{}:{}/synthesize/{}".format(self._host, self._port, encoded_message)
 
-                request = await websession.get(url, params=url_param)
+                request = await websession.get(url)
 
                 if request.status != 200:
                     _LOGGER.error(
@@ -80,7 +76,7 @@ class PicoProvider(Provider):
                 data = await request.read()
 
         except (asyncio.TimeoutError, aiohttp.ClientError):
-            _LOGGER.error("Timeout for PicoTTS API")
+            _LOGGER.error("Timeout for GLaDOSTTS API")
             return (None, None)
 
         if data:

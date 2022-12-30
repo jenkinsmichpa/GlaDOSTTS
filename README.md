@@ -1,50 +1,31 @@
-# Home Assistant Component for a remote picoTTS installation.
+# Home Assistant Component for a GLaDOSTTS installation.
 
-[![hacs_badge](https://img.shields.io/badge/HACS-default-orange.svg)](https://github.com/custom-components/hacs)
-
-This is a component for Home Assistant which integrates picoTTS from a remote server.
-Its recommended to run the server via my [Home Assistant Supervisor Addon](https://github.com/Poeschl/Hassio-Addons/tree/master/picoTTS).
+This is a component for Home Assistant which integrates the TTS engine from https://github.com/R2D2FISH/glados-tts.
 
 # Installation
 
-## HACS
-
-Install it in the `Integrations` tab on the [Home Asssistant Community Store](https://github.com/custom-components/hacs).
-
 ## Manual way
-To use it, copy the `picotts_remote` folder inside your `config/custom_components` folder on your home assistant installation first.
-
+To use it, copy the `gladostts` folder inside your `config/custom_components` folder on your home assistant installation first.
 
 # Configuration
 
-Add following config to your yaml if you are using the Supervisor Addon
+Add following config to your yaml if you are running the GLaDOSTTS engine on the same machine
 
 ```yaml
 tts:
-  - platform: picotts_remote
+  - platform: gladostts
 
 ```
-The integration will connect to picoTTS after an Home Assistant restart.
+The integration will connect to GlaDOSTTS after an Home Assistant restart.
 
 ## Other host
 
-For setting your own host and port:
+For setting an external host and specified port:
 
 ```yaml
 tts:
   - platform: picotts_remote
     host: <host>
     port: <port>
-
-```
-
-## Language
-
-The languge can be set to the languages: `en-US`, `en-GB`, `de-DE`, `es-ES`, `fr-FR` and `it-IT` via the `language` key.
-
-```yaml
-tts:
-  - platform: picotts_remote
-    language: "de-DE"
 
 ```
