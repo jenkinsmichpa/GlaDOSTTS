@@ -4,6 +4,9 @@ This is a component for Home Assistant which integrates the TTS engine from http
 
 # Installation
 
+# HACS
+Navigate to the "Integrations" page of HACS on Home Assistant. Click the triple dots and select "Custom repositories". Paste in the GlaDOSTTS repository URL and select the "Integration" category before clicking "ADD". Click the newly shown GLaDOSTTS repository and then "Download". Finally, restart the Home Assistant instance.
+
 ## Manual way
 To use it, copy the `gladostts` folder inside your `config/custom_components` folder on your home assistant installation first.
 
