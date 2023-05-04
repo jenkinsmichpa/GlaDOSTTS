@@ -1,6 +1,6 @@
-# Home Assistant Component for a GLaDOSTTS installation.
+# Home Assistant Component for a GLaDOS Text to Speech Engine
 
-This is a component for Home Assistant which integrates the TTS engine from https://github.com/R2D2FISH/glados-tts.
+✨ This is a component for Home Assistant which integrates the TTS engine from https://github.com/R2D2FISH/glados-tts. ✨
 
 # Installation
 
@@ -39,3 +39,7 @@ tts:
 
 ```
 The integration will connect to GlaDOSTTS after a Home Assistant restart or configuration reload.
+
+## Security Disclaimer
+Please note the risk of running the engine as a permanent service. As the engine's HTTP traffic is unencrypted, it should only be made accessible over a secure, private network when running on a remote host. If running on the same host, host-based firewall rules should configured to block external access.
+
