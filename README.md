@@ -1,6 +1,6 @@
-# Home Assistant Component for a GLaDOS Text to Speech Engine
+# Home Assistant Component for GLaDOS Text to Speech Engine
 
-✨ This is a component for Home Assistant which integrates the TTS engine from https://github.com/R2D2FISH/glados-tts. ✨
+✨ This is a component for Home Assistant which integrates the glados-tts engine from https://github.com/R2D2FISH/glados-tts. It is built off of the Remote-PicoTTS component from https://github.com/Poeschl/Remote-PicoTTS ✨
 
 # Installation
 
