@@ -28,7 +28,7 @@ tts:
 ```
 The integration will connect to GlaDOSTTS after a Home Assistant restart or configuration reload.
 
-## Other host
+## Remote Host
 Add following lines of configuration to `/config/configuration.yaml` if you are running the GLaDOSTTS engine on a different machine than the Home Assistant instance.
 
 ```yaml
