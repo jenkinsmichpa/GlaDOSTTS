@@ -4,31 +4,38 @@ This is a component for Home Assistant which integrates the TTS engine from http
 
 # Installation
 
-## HACS
-Navigate to the "Integrations" page of HACS on Home Assistant. Click the triple dots and select "Custom repositories". Paste in the GlaDOSTTS repository URL and select the "Integration" category before clicking "ADD". Click the newly shown GLaDOSTTS repository and then "Download". Finally, restart the Home Assistant instance.
+## HACS Installation
+1. Using the sidebar, navigate to the "Integrations" page of HACS on Home Assistant.
+    * Visit the following link for help installing HACS: https://hacs.xyz/docs/setup/download/
+3. Click the triple dots and select "Custom repositories".
+4. Paste in the GlaDOSTTS repository URL and select the "Integration" category before clicking "ADD". 
+5. Click the newly shown GLaDOSTTS repository and then "Download". 
+6. Restart the Home Assistant instance.
 
-## Manual way
-To use it, copy the `gladostts` folder inside your `config/custom_components` folder on your home assistant installation first.
+## Manual Installation
+Copy the `gladostts/` directory located under `GlaDOSTTS/custom_components/` to the `/config/custom_components/` directory of your home assistant installation.
+This can be performed using Home Assistant addons such as [Samba](https://github.com/home-assistant/addons/blob/master/samba/DOCS.md) or [SSH](https://github.com/home-assistant/addons/blob/master/ssh/DOCS.md).
 
 # Configuration
 
-Add following config to your yaml if you are running the GLaDOSTTS engine on the same machine
+## Same Host
+Add following lines of configuration to  `/config/configuration.yaml` if you are running the GLaDOSTTS engine on the same machine
 
 ```yaml
 tts:
   - platform: gladostts
 
 ```
-The integration will connect to GlaDOSTTS after an Home Assistant restart.
+The integration will connect to GlaDOSTTS after a Home Assistant restart or configuration reload.
 
 ## Other host
-
-For setting an external host and specified port:
+Add following lines of configuration to `/config/configuration.yaml` if you are running the GLaDOSTTS engine on a different machine than the Home Assistant instance.
 
 ```yaml
 tts:
   - platform: gladostts
-    host: <host>
-    port: <port>
+    host: <engine_host>
+    port: <engine_port>
 
 ```
+The integration will connect to GlaDOSTTS after a Home Assistant restart or configuration reload.
