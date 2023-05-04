@@ -14,6 +14,7 @@
 
 ## Manual Installation
 Copy the `gladostts/` directory located under `GlaDOSTTS/custom_components/` to the `/config/custom_components/` directory of your home assistant installation.
+
 This can be performed using Home Assistant addons such as [Samba](https://github.com/home-assistant/addons/blob/master/samba/DOCS.md) or [SSH](https://github.com/home-assistant/addons/blob/master/ssh/DOCS.md).
 
 # Configuration
@@ -29,8 +30,9 @@ tts:
 The integration will connect to GlaDOSTTS after a Home Assistant restart or configuration reload.
 
 ## Remote Host
-Add following lines of configuration to `/config/configuration.yaml` if you are running the GLaDOSTTS engine on a different machine than the Home Assistant instance.
+Instructions for running the engine within a remote LXC container on Proxmox or other virtualization platform are available [here](https://github.com/jenkinsmichpa/GlaDOSTTS/blob/master/ExampleLXCContainerSetup.md).
 
+Add following lines of configuration to `/config/configuration.yaml` if you are running the GLaDOSTTS engine on a different machine than the Home Assistant instance.
 ```yaml
 tts:
   - platform: gladostts
