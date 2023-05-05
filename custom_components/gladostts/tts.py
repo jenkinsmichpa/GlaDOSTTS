@@ -62,7 +62,7 @@ class GLaDOSTTSProvider(Provider):
         websession = async_get_clientsession(self._hass)
 
         try:
-            with async_timeout.timeout(10):
+            with async_timeout.timeout(30):
                 encoded_message = quote(message)
                 url = "http://{}:{}/synthesize/{}".format(self._host, self._port, encoded_message)
 
