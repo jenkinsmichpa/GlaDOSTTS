@@ -1,12 +1,12 @@
 # Home Assistant Component for GLaDOS Text to Speech Engine
 
-✨ This is a component for Home Assistant which integrates the [glados-tts](https://github.com/R2D2FISH/glados-tts) engine by [R2D2FISH](https://github.com/R2D2FISH). It is built using the [Remote-PicoTTS](https://github.com/Poeschl/Remote-PicoTTS) component by [Poeschl](https://github.com/Poeschl). ✨
+✨ This is a component for Home Assistant which integrates the [glados-tts](https://github.com/R2D2FISH/glados-tts) engine by [R2D2FISH](https://github.com/R2D2FISH). It is built on the [Remote-PicoTTS](https://github.com/Poeschl/Remote-PicoTTS) component by [Poeschl](https://github.com/Poeschl). ✨
 
 # Installation
 
 ## HACS Installation
 1. Using the sidebar, navigate to the "Integrations" page of HACS on Home Assistant.
-    * Visit the following link for help installing HACS: https://hacs.xyz/docs/setup/download/
+    * For help installing HACS, read their documentation [here](https://hacs.xyz/docs/setup/download/). 
 3. Click the triple dots and select "Custom repositories".
 4. Paste in the GlaDOSTTS repository URL and select the "Integration" category before clicking "ADD". 
 5. Click the newly shown GLaDOSTTS repository and then "Download". 
