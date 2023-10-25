@@ -2,6 +2,8 @@
 
 ✨ This is a component for Home Assistant which integrates the [glados-tts](https://github.com/R2D2FISH/glados-tts) engine by [R2D2FISH](https://github.com/R2D2FISH). It is built on the [Remote-PicoTTS](https://github.com/Poeschl/Remote-PicoTTS) component by [Poeschl](https://github.com/Poeschl). ✨
 
+⚠️ While this component still works, deploying the lovely [wyoming-glados](https://github.com/nalf3in/wyoming-glados) Docker container by [nalf3in](https://github.com/nalf3in) would allow you to use the default Wyoming integration instead with simpler setup. ⚠️
+
 # Installation
 
 ## HACS Installation
